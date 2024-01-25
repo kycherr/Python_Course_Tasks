@@ -117,4 +117,4 @@ def sort_data_in_file(file_path):
         with open(source_file, 'r') as src, open(destination_file, 'w') as dst:
             dst.write('\n'.join(sorted(src.read().splitlines())))
     else:
-        print('Source file does not exists')
+        print('Source file not exists')

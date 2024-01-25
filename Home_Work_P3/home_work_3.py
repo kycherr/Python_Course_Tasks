@@ -109,12 +109,13 @@
 # Напишіть скрипт, який сортує вміст текстового файлу за алфавітом і 
 # зберігає відсортований результат у новому файлі. sort_data_in_file(file_path). 
 # Резульаттом має бути новий файл з наступною назвою {file_path}_sorted
-def sort_data_in_file(file_path):
-    import os
-    source_file = input("Enter src file: ")
-    destination_file = input("Enter dst file: ")
-    if os.path.isfile(source_file):
-        with open(source_file, 'r') as src, open(destination_file, 'w') as dst:
-            dst.write('\n'.join(sorted(src.read().splitlines())))
-    else:
-        print('Source file not exists')
+
+#def sort_data_in_file(file_path):
+#    import os
+#    source_file = input("Enter src file: ")
+#    if os.path.isfile(source_file):
+#        with open(source_file, 'r') as src, open(source_file + '_sorted', 'w') as dst:
+#            dst.write('\n'.join(sorted(src.read().splitlines())))
+#    else:
+#        print('Source file not exists')
+#sort_data_in_file('random.txt')

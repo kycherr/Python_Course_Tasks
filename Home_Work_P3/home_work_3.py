@@ -122,3 +122,17 @@
 #####
 ### Part 2 ####
 #####
+#Розробіть функцію, яка перевіряє розмір файлу і повідомляє користувача, 
+#чи він перевищує заданий ліміт. is_greater_size(file_path, limit)
+
+#def is_greater_size(file_path, limit):
+ #   import os
+ #   if os.path.isfile(file_path):
+ #       size = os.path.getsize(file_path) / (1024)
+ #       if size > limit:
+ #           print(f"File size is {size} bytes")
+ #       else:
+ #           print('File not exists')
+#
+#print(is_greater_size('random.txt', 0.200))
+

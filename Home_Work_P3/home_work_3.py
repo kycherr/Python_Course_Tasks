@@ -135,5 +135,71 @@
  #           print('File not exists')
 #
 #print(is_greater_size('random.txt', 0.200))
+
 # Напишіть скрипт для копіювання усіх файлів з одного каталогу в інший. 
 # copy_folder(from_folder , to_folder)
+
+# def copy_folder(from_folder, to_folder):
+#     import os
+#     import shutil
+#     if not os.path.exists(from_folder):
+#         print(f"Error '{from_folder}' not exist")
+#         return
+#     if not os.path.exists(to_folder):
+#         print(f"Create folder '{to_folder}'.")
+#         os.makedirs(to_folder)
+#     files = os.listdir(from_folder)
+#     for file_name in files:
+#         source_path = os.path.join(from_folder, file_name)
+#         destination_path = os.path.join(to_folder, file_name)
+#         shutil.copy2(source_path, destination_path)
+#         print(f"Copy: {file_name}")
+#     print(f"All fiels will copy from '{from_folder}' to '{to_folder}'.")
+# copy_folder("src", "dest")
+
+# Створіть функцію, яка читає CSV-файл і виводить на екран лише певні стовпці.
+
+# def read_csv_columns(csv_file_path, columns):
+#     import csv
+#     try:
+#         with open(csv_file_path, 'r', newline='') as csv_file:
+#             reader = csv.DictReader(csv_file, delimiter=';')
+#             for col in columns:
+#                 if col not in reader.fieldnames:
+#                     print(f"Error! Column {col} does not exist in the file.")
+#                     return
+#             print("\t".join(columns))
+#             for row in reader:
+#                 row_data = [row[col] for col in columns]
+#                 print('\t'.join(row_data))
+#     except FileNotFoundError:
+#         print(f"Error: File {csv_file_path} does not exist.")
+#     except Exception as e:
+#         print(f"Error: {e}")
+# read_csv_columns('src/test.csv', ['Username'])
+
+# Напишіть скрипт, який створює архів з кількох файлів та розпаковує його. має бути дві функції
+#     - create_archive (*files)
+#     - unpacking_archive(path_to_archive)
+
+# def create_archive(*files, archive_name, archive_type):
+#     import shutil
+#     try:
+#         shutil.make_archive(archive_name, archive_type, *files)
+#         print(f"Archive {archive_name}.{archive_type} is created successfully")
+#     except Exception as e:
+#         print(f"Error is {e}")
+
+# def  unpacking_archive(archive_path):
+#     import shutil
+#     try:
+#         shutil.unpack_archive(archive_path, extract_dir='unpacked_files')
+#         print(f"Archive war unpacked in 'unpacked_files' dir")
+#     except Exception as e:
+#         print(f"Error while unpacking: {e}")
+# files = ['src', 'test.csv']
+# create_archive(*files, archive_name='my_archive', archive_type='zip')
+# unpacking_archive('my_archive.zip')
+
+ 
+        

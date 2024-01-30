@@ -135,3 +135,5 @@
  #           print('File not exists')
 #
 #print(is_greater_size('random.txt', 0.200))
+# Напишіть скрипт для копіювання усіх файлів з одного каталогу в інший. 
+# copy_folder(from_folder , to_folder)

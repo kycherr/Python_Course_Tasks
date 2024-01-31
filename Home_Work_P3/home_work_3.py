@@ -230,4 +230,22 @@
 # Напишіть функцію, яка масово перейменовує файли у заданому каталозі за певним шаблоном. 
 # Додайте до кожної назви файла префікс "rename_"
 
-
+# def rename_files(dir):
+#     import os
+#     try:
+#         files = os.listdir(dir)
+#         for file in files:
+#             old_path = os.path.join(dir, file)
+#             new_name = f"rename_{file}"
+#             new_path = os.path.join(dir, new_name)
+#             counter = 1
+#             while os.path.exists(new_path):
+#                 new_name = f"rename_{counter}_{file}"
+#                 new_path = os.path.join(dir, new_name)
+#                 counter += 1
+#             os.rename(old_path, new_path)
+#             print(f"Raname: {file} -> {new_name}")
+#     except Exception as e:
+#         print(f"Error {e}")
+        
+# rename_files('src')

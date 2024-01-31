@@ -331,39 +331,136 @@
 
 # Розробіть функцію для знаходження найбільшого та найменшого файлів у вказаному каталозі.
 
-
-import os
-def file_size_comp(directory):
-    
-    try:
-        l_file = None
-        s_file = None
-        l_size = 0
-        s_size = float('inf')
+# def file_size_comp(directory):
+#     import os
+#     try:
+#         l_file = None
+#         s_file = None
+#         l_size = 0
+#         s_size = float('inf')
         
-        for root, dirs, files in os.walk(directory):
-            for file in files:
-                file_path = os.path.join(root, file)
-                file_size = os.path.getsize(file_path)
+#         for root, dirs, files in os.walk(directory):
+#             for file in files:
+#                 file_path = os.path.join(root, file)
+#                 file_size = os.path.getsize(file_path)               
+#                 if file_size > l_size:
+#                     l_size = file_size
+#                     l_file = file_path
+#                 if file_size < s_size:
+#                     s_size = file_size
+#                     s_file = file_path
+#         if l_file and s_file:
+#             print(f"Largest file: {l_file}, Size: {os.path.getsize(l_file)} bytes")
+#             print(f"Smallest file: {s_file}, Size: {os.path.getsize(s_file)} bytes")
+#         else:
+#             print("No files found in dir")
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# file_size_comp('src')
+
+# Створіть функцію для об'єднання вмісту декількох текстових файлів у один файл.
+
+# def merge_files(output_file, *input_files):
+#     try:
+#         with open(output_file, 'w') as output:
+#             for input in input_files:
+#                 with open(input, 'r') as input:
+#                     output.write(input.read() + '\n')
+#         print(f"Merge done! Out file is {output_file}")
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# merge_files('out.txt', 'src/1.txt', 'src/2.txt')
                 
-                if file_size > l_size:
-                    l_size = file_size
-                    l_file = file_path
-                if file_size < s_size:
-                    s_size = file_size
-                    s_file = file_path
-        return l_file, s_file
-    except Exception as e:
-        print(f"Error is {e}")
+# Створіть функцію, яка перевіряє, чи усі файли у вказаному каталозі мають однаковий розмір.       
 
-# Example usage
-directory_path = 'src'
-largest, smallest = file_size_comp(directory_path)
+# def check_files_size_equality(directory):
+#     import os
+#     try:
+#         files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
+#         if not files:
+#             print("No files found in the directory.")
+#             return False
+#         first_file_size = os.path.getsize(os.path.join(directory, files[0]))
+#         for file in files[1:]:
+#             file_path = os.path.join(directory, file)
+#             file_size = os.path.getsize(file_path)
 
-if largest and smallest:
-    print(f"Largest file: {largest}, Size: {os.path.getsize(largest)} bytes")
-    print(f"Smallest file: {smallest}, Size: {os.path.getsize(smallest)} bytes")
-else:
-    print("Failed to find files in the specified directory.")
+#             if file_size != first_file_size:
+#                 print(f"Files in the directory do not have the same size.")
+#                 return False
+#         print("All files in the directory have the same size.")
+#         return True
+#     except Exception as e:
+#         print(f"Error: {e}")
+#         return False
+
+# check_files_size_equality('src')
+
+# Розробіть скрипт для вилучення всіх коментарів з файлу програмного коду на мові Python.
+
+# def remove_comments(file_path):
+#     import re
+#     try:
+#         with open(file_path, 'r') as file:
+#             code = file.read()
+#             code = re.sub(r'#.*', '', code)
+#         with open(file_path, 'w') as file:
+#             file.write(code)
+#         print(f"Comments removed successfully from {file_path}")
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# remove_comments('src/test.py')
+
+# Створіть скрипт, який автоматично видаляє файли, які не змінювалися протягом останнього місяця, з вказаного каталогу
+
+# def remove_old_files(directory_path):
+#     import os
+#     import time
+#     try:
+#         current_time = time.time()
+#         thirty_days_ago = current_time - (30 * 24 * 60 * 60)
+
+#         for root, dirs, files in os.walk(directory_path):
+#             for file in files:
+#                 file_path = os.path.join(root, file)
+#                 last_modified_time = os.path.getmtime(file_path)
+
+#                 if last_modified_time < thirty_days_ago:
+#                     os.remove(file_path)
+#                     print(f"File {file_path} removed.")
+#             print("No old files!")
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# remove_old_files('src')
+
+# def split_list(input_list, delimiter):
+#     try:
+#         if delimiter not in input_list:
+#             raise ValueError(f"Delimiter '{delimiter}' not found in the list.")
+        
+#         index_of_delimiter = input_list.index(delimiter)
+#         sublist1 = input_list[:index_of_delimiter]
+#         sublist2 = input_list[index_of_delimiter + 1:]
+
+#         if sublist1 is not None and sublist2 is not None:
+#             print(f"Sublist 1: {sublist1}")
+#             print(f"Sublist 2: {sublist2}")
+#         else:
+#             print("Failed to split the list.")
+
+#         return sublist1, sublist2
+    
+#     except Exception as e:
+#         print(f"Error: {e}")
+#         return None, None
+
+# my_list = [1, 2, 3, 0, 4, 5, 6]
+# delimiter = 4
+# split_list(my_list, delimiter)
+
 
                  

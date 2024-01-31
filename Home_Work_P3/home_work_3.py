@@ -249,3 +249,61 @@
 #         print(f"Error {e}")
         
 # rename_files('src')
+
+# Створіть скрипт, який зчитує XML-файл та витягує з нього певну інформацію.
+
+# def read_xml(file):
+#     import xml.etree.ElementTree as ET
+#     try:
+#         tree = ET.parse(file)
+#         root = tree.getroot()
+#         for book in root.findall('.//book'):
+#             title = book.find('title').text
+#             author = book.find('author').text
+            
+#             print(f"Title: {title}, Author: {author}")
+#     except Exception as e:
+#         print(f"Error {e}")
+        
+# read_xml('src/test.xml')
+
+# Розробіть скрипт, який переформатовує CSV-файл, 
+# видаляючи дублікати рядків та зберігаючи результат у новому файлі.
+
+# def rem_dup(src_f, dst_f):
+#     import csv
+#     try:
+#         with open(src_f, 'r', newline='') as infile, open(dst_f, 'w', newline='') as outfile:
+#             reader = csv.reader(infile)
+#             writer = csv.writer(outfile)
+#             seen_rows = set()
+#             for row in reader:
+#                 tupple_row = tuple(row)
+#                 if tupple_row not in seen_rows:
+#                     seen_rows.add(tupple_row)
+#                     writer.writerow(row)
+#                     print(f"Added unic row: {row}")
+#             print("Dupliocates is found! Results saved in new file")
+#     except Exception as e:
+#         print(f"Error is {e}")
+        
+# rem_dup('src/rename_test.csv', 'without_dup.csv')
+
+# Створіть функцію для пошуку файлів з певним розширенням 
+# у вказаному каталозі та всіх його підкаталогах..
+
+# def find_files_ext(dir, ext):
+#     import os
+#     found_files = []
+#     try:
+#         for root, dirs, files in os.walk(dir):
+#             for file in files:
+#                 if file.endswith(ext):
+#                     file_path = os.path.join(root, file)
+#                     found_files.append(file_path)
+#     except Exception as e:
+#         print(f"Error {e}")
+#     print(found_files)
+
+# find_files_ext('src', '.xml')
+                    

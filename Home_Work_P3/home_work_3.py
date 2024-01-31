@@ -328,3 +328,42 @@
 
 # # Example usage
 # info_file('src', 'info.txt')           
+
+# Розробіть функцію для знаходження найбільшого та найменшого файлів у вказаному каталозі.
+
+
+import os
+def file_size_comp(directory):
+    
+    try:
+        l_file = None
+        s_file = None
+        l_size = 0
+        s_size = float('inf')
+        
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                file_path = os.path.join(root, file)
+                file_size = os.path.getsize(file_path)
+                
+                if file_size > l_size:
+                    l_size = file_size
+                    l_file = file_path
+                if file_size < s_size:
+                    s_size = file_size
+                    s_file = file_path
+        return l_file, s_file
+    except Exception as e:
+        print(f"Error is {e}")
+
+# Example usage
+directory_path = 'src'
+largest, smallest = file_size_comp(directory_path)
+
+if largest and smallest:
+    print(f"Largest file: {largest}, Size: {os.path.getsize(largest)} bytes")
+    print(f"Smallest file: {smallest}, Size: {os.path.getsize(smallest)} bytes")
+else:
+    print("Failed to find files in the specified directory.")
+
+                 

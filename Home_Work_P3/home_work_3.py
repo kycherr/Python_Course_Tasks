@@ -201,5 +201,33 @@
 # create_archive(*files, archive_name='my_archive', archive_type='zip')
 # unpacking_archive('my_archive.zip')
 
- 
-        
+#  Розробіть функцію, яка змінює права доступу до файлу 
+#  (наприклад, робить його доступним лише для читання або запису).
+
+# def chmod_file(file_path, mode):
+#     import os
+#     try:
+#         os.chmod(file_path, mode)
+#         print(f"Chmod for {file_path} now is {mode}")
+#     except Exception as e:
+#         print(f"Error is {e}")
+
+# chmod_file('random.txt', 400)
+
+# Створіть функцію, яка виводить список всіх файлів у заданому каталозі та його підкаталогах.
+
+# def ls_dir(dir):
+#     import os
+#     try:
+#         for root, dirs, files in os.walk(dir):
+#             for file in files:
+#                 file_path = os.path.join(root, file)
+#                 print(file_path)
+#     except Exception as e:
+#         print(f"Error {e}")
+# ls_dir('src')
+
+# Напишіть функцію, яка масово перейменовує файли у заданому каталозі за певним шаблоном. 
+# Додайте до кожної назви файла префікс "rename_"
+
+

@@ -437,6 +437,9 @@
 
 # remove_old_files('src')
 
+# Напишіть функцію для розділу списку на два підсписки, використовуючи певний елемент як роздільник. 
+# Врахуйте можливі помилки, такі як відсутність роздільника чи невірний тип даних у списку.
+
 # def split_list(input_list, delimiter):
 #     try:
 #         if delimiter not in input_list:
@@ -454,13 +457,60 @@
 
 #         return sublist1, sublist2
     
-#     except Exception as e:
-#         print(f"Error: {e}")
-#         return None, None
+    # except ValueError as ve:
+    #     print(f"Error: {ve}")
+    #     return None, None
+    # except TypeError as te:
+    #     print(f"Error: {te}")
+    #     return None, None
+    # except Exception as e:
+    #     print(f"Error: {e}")
+    #     return None, None
 
 # my_list = [1, 2, 3, 0, 4, 5, 6]
 # delimiter = 4
 # split_list(my_list, delimiter)
 
+# Розробіть функцію для обчислення податку на прибуток за різними ставками. 
+# Використовуйте try-except, щоб обробити можливі помилки введення користувача або некоректні дані.
 
-                 
+# def calculate_income_tax(income):
+#     try:
+#         income = float(income)
+#         if income < 0:
+#             raise ValueError("Income should be a non-negative")
+#         elif income <= 10000:
+#             tax_rate = 0.1
+#         elif income <= 50000:
+#             tax_rate = 0.2
+#         else:
+#             tax_rate = 0.3
+#         income_tax = income * tax_rate
+#         if income_tax is not None:
+#             print(f"Tax is: {income_tax}")
+#         else:
+#             print("Error in calculation")
+#     except ValueError as ve:
+#         print(f"Error: {ve}")
+#     except Exception as e:
+#         print(f"Error: {e}")
+        
+# calculate_income_tax('100000')
+
+# Створіть програму для валідації електронної адреси користувача. 
+# Використовуйте try-except, щоб обробити помилки формату 
+# або відсутності необхідних компонентів (наприклад, "@")
+
+# def validate_email(email):
+#     try:
+#         if not isinstance(email, str):
+#             raise ValueError("Email should be a string")
+#         if "@" not in email:
+#             raise ValueError("Invalid email, missing '@' symbol.")
+#         print("Email valid!")
+#     except ValueError as ve:
+#         print(f"Error: {ve}")
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# validate_email('kycherr@gmail.com')

@@ -306,4 +306,25 @@
 #     print(found_files)
 
 # find_files_ext('src', '.xml')
-                    
+
+# Створіть функцію для створення текстового файлу, 
+# в якому кожний рядок містить назву файлу,
+# його розмір та дату створення, для всіх файлів у вказаному каталозі.
+
+# def info_file(directory, output_file):
+#     import os
+#     from datetime import datetime
+#     try:
+#         with open(output_file, 'w') as out:
+#             for root, dirs, files in os.walk(directory):
+#                 for file in files:
+#                     file_path = os.path.join(root, file)
+#                     file_size = os.path.getsize(file_path)
+#                     create_time = os.path.getctime(file_path)
+#                     create_time_str = datetime.fromtimestamp(create_time).strftime('%Y-%m-%d %H:%M:%S')
+#                     out.write(f"File: {file}\nSize: {file_size} bytes\nCreate time: {create_time_str}\n\n")
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# # Example usage
+# info_file('src', 'info.txt')           

@@ -26,8 +26,8 @@ PS: все можна робити з консолі, можете не вико
 бібліотеки для створення інтерфейсу. Але якщо є бажання , можете зробити
 щось з красивим інтерфейсом :)
 ```
-[x] - Root route ![Screen:](screenshoots/s1.jpg)
-[x] - Register route ![Screen:](screenshoots/s2.jpg)
-[x] - Login route ![Screen:](screenshoots/s3.jpg)
-[x] - Registred User route ![Screen:](screenshoots/s4.jpg)
-[x] - History route ![Screen:](screenshoots/s5.jpg)
+[x] - Root route ![Screen:](screenshoots/s1.jpg)</br>
+[x] - Register route ![Screen:](screenshoots/s2.jpg)</br>
+[x] - Login route ![Screen:](screenshoots/s3.jpg)</br>
+[x] - Registred User route ![Screen:](screenshoots/s4.jpg)</br>
+[x] - History route ![Screen:](screenshoots/s5.jpg)</br>

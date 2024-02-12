@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Python Course - Python Calculator</title>
+</head>
+<body>
+    <h1>WA Course - Python Calculator</h1>
+
+    {% if registered %}
+        <form method="post" action="/calculate">
+            <label for="num1">Number 1:</label>
+            <input type="number" name="num1" required>
+            <br>
+            <label for="num2">Number 2:</label>
+            <input type="number" name="num2" required>
+            <br>
+            <label for="operation">Operation:</label>
+            <select name="operation" required>
+                <option value="+">Add</option>
+                <option value="-">Subtract</option>
+                <option value="*">Multiply</option>
+                <option value="/">Divide</option>
+            </select>
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+
+        <form method="post" action="/calculate">
+            <label for="num1">Number 1:</label>
+            <input type="number" name="num1" required>
+            <br>
+            <label for="operation">Operation:</label>
+            <select name="operation" required>
+                <option value="sin">Sine</option>
+                <option value="cos">Cosine</option>
+                <option value="tan">Tangent</option>
+                <option value="cot">Cotangent</option>
+            </select>
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+
+    {% else %}
+        <form method="post" action="/calculate">
+            <label for="num1">Number 1:</label>
+            <input type="number" name="num1" required>
+            <br>
+            <label for="num2">Number 2:</label>
+            <input type="number" name="num2" required>
+            <br>
+            <label for="operation">Operation:</label>
+            <select name="operation" required>
+                <option value="+">Add</option>
+                <option value="-">Subtract</option>
+                <option value="*">Multiply</option>
+                <option value="/">Divide</option>
+            </select>
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        {% if result %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+    {% endif %}
+
+    {% if 'user_id' in session %}
+        <p><a href="{{ url_for('history') }}">View History</a></p>
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    {% else %}
+        <p><a href="{{ url_for('register') }}">Register</a></p>
+        <p><a href="{{ url_for('login') }}">Login</a></p>
+    {% endif %}
+</body>
+</html>

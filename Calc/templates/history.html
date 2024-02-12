@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Operation History</title>
+</head>
+<body>
+    <h1>Operation History</h1>
+
+    {% if operations %}
+        <ul>
+            {% for operation in operations %}
+                <li>{{ operation.date }}: {{ operation.operation }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No operations found.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back to Calculator</a>
+</body>
+</html>
